@@ -25,7 +25,7 @@ Bạn cần cài đặt:
 ## Clone repository
 
 ```bash
-git clone https://github.com/yourusername/todoapp.git
+git clone https://github.com/Cong-Chau/todo-ap-v2.git
 cd todoapp
 ```
 
