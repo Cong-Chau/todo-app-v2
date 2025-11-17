@@ -107,24 +107,6 @@ Frontend sẽ chạy tại: `http://localhost:3000`.
 
 ---
 
-## Biến môi trường Frontend (tuỳ chọn)
-
-Tạo file `.env` trong frontend:
-
-```env
-REACT_APP_API_URL=http://localhost:5020/api
-```
-
-Sau đó cập nhật `todoApi.js`:
-
-```js
-const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5020/api",
-});
-```
-
----
-
 ## Sử dụng
 
 1. Mở trình duyệt tại `http://localhost:3000`.
@@ -137,10 +119,6 @@ const api = axios.create({
 
 - Đảm bảo MySQL đang chạy.
 - Kiểm tra port backend và frontend không trùng với ứng dụng khác.
-- Có thể thay đổi port backend bằng cách chỉnh biến `PORT` trong `.env` và `launchSettings.json`.
+- Có thể thay đổi port backend bằng cách chỉnh biến `PORT` trong `launchSettings.json`.
 
 ---
-
-## License
-
-MIT © Tên của bạn
