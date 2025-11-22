@@ -31,28 +31,22 @@ cd todoapp
 
 ---
 
-## Cấu hình Backend (ASP.NET Core Web API)
+## Cấu hình Database (MySQL)
 
-1. **Tạo file `.env`** trong thư mục backend (hoặc root) với nội dung:
+1. **Tạo database `todoapp`** trong MySQL Workbench:
 
-```env
-# Cấu hình MySQL
-DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=todoapp
-DB_USER=root
-DB_PASSWORD=matkhaucuaban
-
-# Port backend
-PORT=5020
+```SQL
+CREATE DATABASE tododapp;
 ```
 
-2. **Cập nhật `appsettings.json`** (nếu muốn dùng biến môi trường):
+## Cấu hình Backend (ASP.NET Core Web API)
+
+1. **Cập nhật `appsettings.json`**:
 
 ```json
 {
   "ConnectionStrings": {
-    "Default": "server=${DB_HOST};port=${DB_PORT};database=${DB_NAME};user=${DB_USER};password=${DB_PASSWORD}"
+    "Default": "server=localhost;port=3306;database=todoapp;user=root;password=matkhaucuaban"
   },
   "Logging": {
     "LogLevel": {
@@ -64,14 +58,14 @@ PORT=5020
 }
 ```
 
-3. **Tạo database và áp dụng migration**:
+2. **Tạo database và áp dụng migration**:
 
 ```bash
 cd TodoApi
 dotnet ef database update
 ```
 
-4. **Chạy backend**:
+3. **Chạy backend**:
 
 ```bash
 dotnet run --urls http://localhost:5020
